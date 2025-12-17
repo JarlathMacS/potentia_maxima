@@ -20,7 +20,7 @@ from home import views as home_views
 # from home include urls as home_urls
 
 urlpatterns = [
-    path('', home_views.index, name='index'),
+    path('', include('home.urls'), name='home_urls'),
+    # path('', home_views.index, name='index'),
     path('admin/', admin.site.urls),
-    # path('', include('home.urls'), name='home_urls'),
 ]
