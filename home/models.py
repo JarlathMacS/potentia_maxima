@@ -10,7 +10,11 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # class CoachingStaff(models.Model):
 #     staff_id = models.IntegerField(primary_key=True)
-#     user_id = models.OneToOneField(AllUsers, on_delete=models.CASCADE, related_name="tbd")
+#     user_id = models.OneToOneField(
+#         AllUsers,
+#         on_delete=models.CASCADE,
+#         related_name="tbd",
+#     )
 #     superuser = models.BooleanField()
 
 
@@ -29,9 +33,15 @@ class CoachingPost(models.Model):
     )
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # staff_id = models.ForeignKey(CoachingStaff, on_delete=models.CASCADE, related_name="tbd")
+    # staff_id = models.ForeignKey(
+    #     CoachingStaff,
+    #     on_delete=models.CASCADE,
+    #     related_name="tbd",
+    # )
     status = models.IntegerField(choices=STATUS, default=0)
-    # status_id = models.OneToOneField(Status, on_delete=models.CASCADE, related_name="tbd")
+    # status_id = models.OneToOneField(
+    #     Status, on_delete=models.CASCADE, related_name="tbd"
+    # )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -47,7 +57,11 @@ class CoachingPost(models.Model):
 
 # class ClientUser(models.Model):
 #     client_id = models.IntegerField(primary_key=True)
-#     user_id = models.OneToOneField(AllUsers, on_delete=models.CASCADE, related_name="tbd")
+#     user_id = models.OneToOneField(
+#         AllUsers,
+#         on_delete=models.CASCADE,
+#         related_name="tbd",
+#     )
 #     active = models.BooleanField()
 
 class ProgressComment(models.Model):
@@ -55,8 +69,16 @@ class ProgressComment(models.Model):
     Stores a single progress comment entry related to :model:`auth.User`
     and :model:`home.CoachingPost`.
     """
-    post = models.ForeignKey(CoachingPost, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    post = models.ForeignKey(
+        CoachingPost,
+        on_delete=models.CASCADE,
+        related_name="comments",
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="commenter",
+    )
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)

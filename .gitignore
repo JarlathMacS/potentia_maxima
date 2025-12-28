@@ -44,3 +44,5 @@ CVS
 **/Thumbs.db
 
 blog/fixtures/
+
+# db.sqlite3
