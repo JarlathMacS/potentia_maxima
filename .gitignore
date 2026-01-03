@@ -43,6 +43,6 @@ CVS
 **/.DS_Store
 **/Thumbs.db
 
-# blog/fixtures/
+home/fixtures/
 
 db.sqlite3

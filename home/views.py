@@ -12,8 +12,8 @@ from .models import CoachingPost
 
 class CoachingPostList(generic.ListView):
     # model = CoachingPost
-    template_name = "home/coaching_post_list.html"
-    context_object_name = "object_list"
+    template_name = "home/index.html"
+    # context_object_name = "object_list"
     paginate_by = 6
     queryset = CoachingPost.objects.filter(status=1).order_by("-created_on")
     # queryset = CoachingPost.objects.all().order_by("-created_on")
