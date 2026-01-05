@@ -163,3 +163,14 @@ def coaching_post_detail(request, slug):
             # "comment_form": comment_form,
          },
     )
+
+
+# The event_id argument is passed into view from the url. In the view
+# we get all the Event records from the database as a queryset. Then
+# pass this queryset and the event_id to the get_object_or_404()
+# helper function and assign that to a variable event.
+
+# Top Tip: In this case, you could shorten the database request code
+# by passing the model directly into the helper function.
+
+# event = get_object_or_404(Event, event_id=event_id)
