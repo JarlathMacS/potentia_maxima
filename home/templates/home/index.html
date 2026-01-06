@@ -1,5 +1,7 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
+{% if user.is_authenticated %}
+
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
@@ -49,6 +51,8 @@
     </nav>
     {% endif %}
 </div>
+
+{% endif %}
 
 <!-- index.html content ends here -->
 {% endblock %}
