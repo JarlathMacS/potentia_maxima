@@ -124,9 +124,9 @@ def coaching_post_detail(request, slug):
     ``post``
         An instance of :model:`home.CoachingPost`.
     ``comments``
-        All approved comments related to the post.
+        All comments related to the post.
     ``comment_count``
-        A count of approved comments related to the post.
+        A count of comments related to the post.
     ``comment_form``
         An instance of :form:`home.CommentForm`
 
@@ -136,6 +136,8 @@ def coaching_post_detail(request, slug):
     """
     queryset = CoachingPost.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
+    comments = post.comments.all().order_by("-created_on")
+    comment_count = post.comments.count()
     # comments = post.comments.all().order_by("-created_on")
     # comment_count = post.comments.count()
 
@@ -158,8 +160,8 @@ def coaching_post_detail(request, slug):
         "home/coaching_post_detail.html",
         {
             "post": post,
-            # "comments": comments,
-            # "comment_count": comment_count,
+            "comments": comments,
+            "comment_count": comment_count,
             # "comment_form": comment_form,
          },
     )
