@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
+from django.contrib import messages
 from .models import CoachingPost
+from .forms import CommentForm
 
 # from django.http import HttpResponse
 
@@ -18,17 +20,6 @@ class CoachingPostList(generic.ListView):
     queryset = CoachingPost.objects.filter(status=1).order_by("-created_on")
     # filter by audience / client user
 
-    # queryset = CoachingPost.objects.all().order_by("-created_on")
-#     queryset = CoachingPost.objects.filter(
-#         author__username='admin').order_by("-created_on")
-#     queryset = CoachingPost.objects.filter(
-#         author__username='admin', status=1).order_by("-created_on")
-    # queryset = CoachingPost.objects.filter(
-    #     author__username='admin', status=1).order_by("-created_on")[:3]
-#     queryset = CoachingPost.objects.filter(
-#         author__username='admin', status=1).order_by("-created_on")[:5]
-#     queryset = CoachingPost.objects.filter(
-# author__username='admin', status=1).order_by("-created_on")[:10]
     # queryset = CoachingPost.objects.filter(
     #     author__username='admin', status=1).order_by("-created_on")[:6]
     # # for pagination testing
@@ -81,38 +72,6 @@ class CoachingPostList(generic.ListView):
     #     author__username='admin', status=1).order_by("-created_on")[:0]
     #   # for testing
     # queryset = CoachingPost.objects.none()  # for testing no posts available
-    # queryset = CoachingPost.objects.all().order_by("-created_on")[:3]
-#     queryset = CoachingPost.objects.all().order_by("-created_on")[:5]
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:10]
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:6]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:2]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:4]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:8]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:12]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:15]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:20]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:25]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:30]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:50]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:100]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:200]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-# "-created_on")[:500]  # for pagination testing
-#     queryset = CoachingPost.objects.all().order_by(
-#         "-created_on")[:1000]  # for pagination testing
 
 
 def coaching_post_detail(request, slug):
@@ -124,11 +83,11 @@ def coaching_post_detail(request, slug):
     ``post``
         An instance of :model:`home.CoachingPost`.
     ``comments``
-        All comments related to the post.
+        All progress comments related to the coaching post.
     ``comment_count``
-        A count of comments related to the post.
+        A count of progress comments related to the coaching post.
     ``comment_form``
-        An instance of :form:`home.CommentForm`
+        An instance of :form:`home.CommentForm`.
 
     **Template:**
 
@@ -138,22 +97,20 @@ def coaching_post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.count()
-    # comments = post.comments.all().order_by("-created_on")
-    # comment_count = post.comments.count()
 
-    # if request.method == "POST":
-    #     comment_form = CommentForm(data=request.POST)
-    #     if comment_form.is_valid():
-    #         comment = comment_form.save(commit=False)
-    #         comment.author = request.user
-    #         comment.post = post
-    #         comment.save()
-    #         messages.add_message(
-    #             request, messages.SUCCESS,
-    #             'Comment submitted and awaiting approval'
-    #         )
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                "Your progress comment has been added successfully"
+                )
 
-    # comment_form = CommentForm()
+    comment_form = CommentForm()
 
     return render(
         request,
@@ -162,7 +119,7 @@ def coaching_post_detail(request, slug):
             "post": post,
             "comments": comments,
             "comment_count": comment_count,
-            # "comment_form": comment_form,
+            "comment_form": comment_form,
          },
     )
 
