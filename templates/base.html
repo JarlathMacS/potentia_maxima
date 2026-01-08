@@ -71,21 +71,21 @@
             </div>
         </div>
     </nav>
-<!-- displaying Django messages -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      {% for message in messages %}
-      <div class="alert {{ message.tags }} alert-dismissible
-        fade show" id="msg" role="alert">
-        {{ message | safe }}
-        <button type="button" class="btn-close"
-          data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      {% endfor %}
+    <!-- displaying Django messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+                    fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" 
+                    data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-  </div>
-</div>
     <main class="flex-shrink-0 main-bg">
         {% if user.is_authenticated %}
         <p class="text-end m-3">You are logged in as {{ user }}</p>
@@ -105,7 +105,7 @@
         {% comment %} Footer creator info {% endcomment %}
         <p class="m-0 text-center text-white">
             {% block copyright %}
-            Created by Jarlath
+            &copy; 2026 Jarlath
             {% endblock copyright %}
         </p>
         <p class="m-0 text-center text-white">Follow us:
