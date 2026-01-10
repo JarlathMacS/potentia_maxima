@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from .forms import FreeConsultationForm
 
@@ -19,6 +20,15 @@ def enquire_view(request):
     **Template**
     :template:`about/about.html`
     """
+    if request.method == "POST":
+        free_consultation_form = FreeConsultationForm(data=request.POST)
+        if free_consultation_form.is_valid():
+            free_consultation_form.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                "Free consultation request received! "
+                "I endeavour to respond within 3 working days.")
+
     free_consultation_form = FreeConsultationForm()
     # about_content = About.objects.all().order_by('-updated_on').first()
     # In case there's multiple About instances, get the latest one

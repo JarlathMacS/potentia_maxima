@@ -14,5 +14,11 @@ from .models import FreeConsultationRequest
 
 @admin.register(FreeConsultationRequest)
 class FreeConsultationRequestAdmin(admin.ModelAdmin):
-
+    """
+    Lists fields for display in admin, fields for search,
+    field filters, and fields for ordering.
+    """
     list_display = ('message', 'read',)
+    list_filter = ('read',)
+    search_fields = ('message',)
+    ordering = ('-read',)

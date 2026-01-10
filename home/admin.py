@@ -5,7 +5,10 @@ from .models import CoachingPost, ProgressComment
 
 @admin.register(CoachingPost)
 class CoachingPostAdmin(SummernoteModelAdmin):
-
+    """
+    Lists fields for display in admin, fields for search,
+    field filters, fields to prepopulate, and fields with rich-text editor.
+    """
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on',)
