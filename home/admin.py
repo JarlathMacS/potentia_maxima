@@ -17,4 +17,12 @@ class CoachingPostAdmin(SummernoteModelAdmin):
 
 
 # Register your models here.
-admin.site.register(ProgressComment)
+@admin.register(ProgressComment)
+class ProgressCommentAdmin(admin.ModelAdmin):
+    """
+    Lists fields for display in admin, fields for search,
+    and field filters.
+    """
+    list_display = ('post', 'author', 'created_on')
+    search_fields = ['body',]
+    list_filter = ('post', 'author', 'created_on',)
