@@ -88,6 +88,7 @@ class ProgressComment(models.Model):
 
     def __str__(self):
         return (
-            f"Progress comment {self.body} by {self.author} | "
+            # f"Progress comment {self.body} by {self.author} | "
+            f"Progress comment by {self.author} | "
             f"on coaching post {self.post.title}"
         )

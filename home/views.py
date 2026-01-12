@@ -1,7 +1,8 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import CoachingPost
+from django.http import HttpResponseRedirect
+from .models import CoachingPost, ProgressComment
 from .forms import CommentForm
 
 # from django.http import HttpResponse
@@ -133,3 +134,30 @@ def coaching_post_detail(request, slug):
 # by passing the model directly into the helper function.
 
 # event = get_object_or_404(Event, event_id=event_id)
+
+def progress_comment_edit(request, slug, comment_id):
+    """
+    view to edit comments
+    """
+    if request.method == "POST":
+        queryset = CoachingPost.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(ProgressComment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            # comment.approved = False
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Progress comment updated!'
+            )
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                'Error updating progress comment!'
+            )
+
+    return HttpResponseRedirect(reverse('coaching_post_detail', args=[slug]))
