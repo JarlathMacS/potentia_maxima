@@ -52,7 +52,7 @@ class CoachingPost(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"{self.title} | by {self.author}"
+        return f"{self.title} | by Coach {self.author}"
 
 
 # class ClientUser(models.Model):
