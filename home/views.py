@@ -14,6 +14,20 @@ from .forms import CommentForm
 #     return HttpResponse("Hello, world!")
 
 class CoachingPostList(generic.ListView):
+    """
+    Returns all published coaching posts in :model:`home.CoachingPost`
+    and displays them in a page of six coaching posts.
+    **Context**
+
+    ``queryset``
+        All published instances of :model:`home.CoachingPost`
+    ``paginate_by``
+        Number of posts per page.
+
+    **Template:**
+
+    :template:`home/index.html`
+    """
     # model = CoachingPost
     template_name = "home/index.html"
     # context_object_name = "object_list"
@@ -137,7 +151,16 @@ def coaching_post_detail(request, slug):
 
 def progress_comment_edit(request, slug, comment_id):
     """
-    view to edit comments
+    Display an individual progress comment for edit.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`home.CoachingPost`.
+    ``comment``
+        A single progress comment related to the post.
+    ``comment_form``
+        An instance of :form:`home.CommentForm`
     """
     if request.method == "POST":
         queryset = CoachingPost.objects.filter(status=1)
@@ -159,5 +182,34 @@ def progress_comment_edit(request, slug, comment_id):
                 request, messages.ERROR,
                 'Error updating progress comment!'
             )
+
+    return HttpResponseRedirect(reverse('coaching_post_detail', args=[slug]))
+
+
+def progress_comment_delete(request, slug, comment_id):
+    """
+    Delete an individual progress comment.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`home.CoachingPost`.
+    ``comment``
+        A single progress comment related to the post.
+    """
+    # queryset = CoachingPost.objects.filter(status=1)
+    # post = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(ProgressComment, pk=comment_id)
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Progress comment deleted!'
+        )
+    else:
+        messages.add_message(
+            request, messages.ERROR,
+            'You can only delete your own progress comments!'
+        )
 
     return HttpResponseRedirect(reverse('coaching_post_detail', args=[slug]))
