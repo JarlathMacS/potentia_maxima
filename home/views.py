@@ -124,6 +124,11 @@ def coaching_post_detail(request, slug):
                 request, messages.SUCCESS,
                 "Your progress comment has been added successfully"
                 )
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                "There was an error adding your progress comment"
+                )
 
     comment_form = CommentForm()
 
@@ -200,6 +205,7 @@ def progress_comment_delete(request, slug, comment_id):
     # queryset = CoachingPost.objects.filter(status=1)
     # post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(ProgressComment, pk=comment_id)
+
     if comment.author == request.user:
         comment.delete()
         messages.add_message(
