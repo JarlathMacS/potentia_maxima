@@ -5,7 +5,9 @@ from django.db import models
 
 class FreeConsultationRequest(models.Model):
     name = models.CharField(max_length=200)
-    email = models.EmailField()
+    email = models.EmailField(
+        max_length=200, unique=True, blank=False, null=False
+    )
     message = models.TextField()
     read = models.BooleanField(default=False)
 

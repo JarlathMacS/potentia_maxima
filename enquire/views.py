@@ -28,6 +28,11 @@ def enquire_view(request):
                 request, messages.SUCCESS,
                 "Free consultation request received! "
                 "I endeavour to respond within 3 working days.")
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                "There was an error with your request. "
+                "Please check the form and try again.")
 
     free_consultation_form = FreeConsultationForm()
     # about_content = About.objects.all().order_by('-updated_on').first()
