@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -38,6 +38,7 @@ class CoachingPost(models.Model):
     #     on_delete=models.CASCADE,
     #     related_name="tbd",
     # )
+    featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
     # status_id = models.OneToOneField(
     #     Status, on_delete=models.CASCADE, related_name="tbd"
