@@ -9,7 +9,7 @@ class TestFreeConsultationForm(TestCase):
         form = FreeConsultationForm({
             'name': 'Paddy',
             'email': 'test@test.ie',
-            'message': 'Horse!'
+            'message': 'Howya!'
         })
         self.assertTrue(form.is_valid(), msg="Form is not valid")
 
@@ -18,7 +18,7 @@ class TestFreeConsultationForm(TestCase):
         form = FreeConsultationForm({
             'name': '',
             'email': 'test@test.ie',
-            'message': 'Horse!'
+            'message': 'Howya!'
         })
         self.assertFalse(
             form.is_valid(),
@@ -30,7 +30,7 @@ class TestFreeConsultationForm(TestCase):
         form = FreeConsultationForm({
             'name': 'Paddy',
             'email': '',
-            'message': 'Horse!'
+            'message': 'Howya!'
         })
         self.assertFalse(
             form.is_valid(),
