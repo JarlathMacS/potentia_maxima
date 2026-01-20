@@ -27,7 +27,7 @@ def enquire_view(request):
             messages.add_message(
                 request, messages.SUCCESS,
                 "Free consultation request received! "
-                "I endeavour to respond within 3 working days.")
+                "I aim to respond within 3 working days.")
         else:
             messages.add_message(
                 request, messages.ERROR,
