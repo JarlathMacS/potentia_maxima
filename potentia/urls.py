@@ -16,11 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from home import views as home_views
-# from home include urls as home_urls
+from .views import handler404, handler500
 
 urlpatterns = [
-    # path('', home_views.index, name='index'),
     path('about/', include('about.urls'), name='about_urls'),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
@@ -28,3 +26,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('home.urls'), name='home_urls'),
 ]
+
+handler404 = 'potentia.views.handler404'
+handler500 = 'potentia.views.handler500'

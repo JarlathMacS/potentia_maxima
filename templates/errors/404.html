@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-8">
+            <img src="{% static 'images/error.png' %}" alt="Man cyclist fell 
+            off bicycle at crosswalk unhappy guy sits near his bike traffic 
+            accident">
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <h2>Oops!</h2>
+            <h3>404 Error</h3>
+            <p>Something went wrong as this page is not found!</p>
+            <a class="btn btn-primary" aria-label="Go to Home" alt="Go to home page" href="{% url 'home' %}">Go to Home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
