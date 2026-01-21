@@ -9,9 +9,9 @@ class CoachingPostAdmin(SummernoteModelAdmin):
     Lists fields for display in admin, fields for search,
     field filters, fields to prepopulate, and fields with rich-text editor.
     """
-    list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
-    list_filter = ('status', 'created_on',)
+    list_display = ('title', 'author', 'status', 'created_on', 'updated_on',)
+    search_fields = ['title', 'excerpt', 'content']
+    list_filter = ('author', 'status', 'created_on', 'updated_on',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
@@ -23,6 +23,6 @@ class ProgressCommentAdmin(admin.ModelAdmin):
     Lists fields for display in admin, fields for search,
     and field filters.
     """
-    list_display = ('post', 'author', 'created_on')
+    list_display = ('body', 'post', 'author', 'created_on', 'updated_on',)
     search_fields = ['body',]
-    list_filter = ('post', 'author', 'created_on',)
+    list_filter = ('post', 'author', 'created_on', 'updated_on',)
