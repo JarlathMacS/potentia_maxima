@@ -2,7 +2,7 @@ from django.shortcuts import render
 """Views to handle errors"""
 
 
-def handler404(request, exception):
+def handler404(request, exception=None):
     """ Error Handler 404 - Page Not Found """
     return render(request, "errors/404.html", status=404)
 
