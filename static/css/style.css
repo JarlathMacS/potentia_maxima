@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #F1F1F1;
 }
 
 .brand {
@@ -22,11 +22,34 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #25272C;
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #F1F1F1;
+}
+
+.footer-bg {
+    background-color: #acacab;
+    font-weight: bold;
+}
+
+.text-blue {
+    color: #0e64d1;
+}
+
+.text-blue:hover,
+.text-blue:active {
+    color: #fc5201;
+}
+
+.text-orange {
+    color: #fc5201;
+}
+
+.text-orange:hover,
+.text-orange:active {
+    color: #0e64d1;
 }
 
 .card {
@@ -54,7 +77,6 @@ body {
 .author {
     color: white;
     margin: 4px;
-    text-transform: capitalize;
 }
 
 .masthead {
@@ -67,7 +89,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #25272C;
     color: white;
     position: relative;
 }
@@ -84,7 +106,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #25272C;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -93,7 +115,7 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #25272C;
 }
 
 .post-link:hover,
@@ -109,7 +131,7 @@ body {
 .post-subtitle {
     margin-left: 5%;
     color: #ff7e51;
-    text-transform: capitalize;
+    font-weight: bold;
 }
 
 .btn-signup,
@@ -131,7 +153,7 @@ body {
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #25272C;
     text-decoration: underline;
 }
 
@@ -161,6 +183,31 @@ body {
     color: rgb(222, 146, 168);
 }
 
-.font-weight-bold {
+/* .font-weight-bold {
     font-weight: 700;
+} */
+
+.comment-heading {
+    background: #25272C;
+    color: #ff7e51;
+    font-weight: bold;
+}
+
+.footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.social-networks {
+    list-style-type: none;
+}
+
+#social-networks i {
+    font-size: 400%;
+    padding: 5%;
+    /* color: #13366E; */
+}
+#social-networks i:hover {
+    color: #fc5201;
 }

@@ -12,7 +12,7 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">Coach {{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">Coach {{ post.author | capfirst }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
@@ -57,11 +57,11 @@
           to iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="p-2 comments">
-                    <p class="font-weight-bold">
-                        {{ comment.author }}
-                        <span class="font-weight-normal">
+                    <p class="comment-heading">
+                        {{ comment.author | capfirst }} | 
+                        <span>
                             {{ comment.created_on }}
-                        </span> wrote:
+                        </span> | wrote:
                     </p>
                     <div id="comment{{ comment.id }}">
                         {{ comment.body | linebreaks }}
@@ -72,7 +72,9 @@
                     {% endif %}
                 </div>
                 <div class="col-md-8">
-                    <hr>
+                    <p></p>
+                    <p></p>
+                    <p></p>
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
@@ -83,7 +85,7 @@
             <div class="card-body">
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
+                <p>Posting as: {{ user.username | capfirst }}</p>
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}

@@ -21,7 +21,7 @@
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">by coach {{ post.author }}</p>
+                                    <p class="author">by Coach {{ post.author | capfirst }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'coaching_post_detail' post.slug %}" class="post-link">
