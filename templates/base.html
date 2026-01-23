@@ -33,8 +33,7 @@
     {% comment %} Navigation bar {% endcomment %}
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">P<span class="red-o">O</span>TENTIA<span
-                        class="thin"> | MAXIMA</span></span></a>
+            <a class="text-orange" aria-label="Go to Home" alt="Go to home page" href="{% url 'home' %}">POTENTIA | MAXIMA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -110,25 +109,32 @@
         <div class="container">
             <div class="row">
                 <div class="col text-left">
-                    <p class="text-orange">POTENTIA MAXIMA</p>
-                    <p><i class="fab fa-instagram-square ms-3 text-blue"></i></p>
+                    <a class="text-orange" aria-label="Go to Home" alt="Go to home page" href="{% url 'home' %}">POTENTIA | MAXIMA</a>
+                    <p>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener"
+                                aria-label="Visit my Instagram page (opens in a new tab)">
+                        <i class="fab fa-instagram-square ms-3 text-blue-icon footer-link-insta"></i>
+                        </a>
+                    </p>
                 </div>
                 <div class="col text-left">
                     <p class="m-0 text-center"></p>
                 </div>
-                <div class="col text-left text-blue">
-                    <p>Created by Jarlath &copy; 2026</p>
+                <div class="col text-right text-blue">
+                    <p>&copy; 2026 Jarlath
                     <ul class="social-networks">
                         <li>
                             <a href="https://github.com/JarlathMacS" target="_blank" rel="noopener"
                                 aria-label="Visit my GitHub page (opens in a new tab)"><i
-                                    class="fab fa-github"></i></a>
+                                    class="fab fa-github text-blue-icon"></i></a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/jarlathsweeney" target="_blank" rel="noopener"
                                 aria-label="Visit my LinkedIn page (opens in a new tab)"><i
-                                    class="fab fa-linkedin"></i></a>
+                                    class="fab fa-linkedin text-blue-icon"></i></a>
                         </li>
+                    </ul>
+                    </p>
                 </div>
             </div>
         </div>
