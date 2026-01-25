@@ -58,7 +58,7 @@
                 {% for comment in comments %}
                 <div class="p-2 comments">
                     <p class="comment-heading">
-                        {{ comment.author | capfirst }} | 
+                        {{ comment.author | capfirst }} |
                         <span>
                             {{ comment.created_on }}
                         </span> | wrote:
@@ -115,6 +115,21 @@
                 <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
             </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'images/error.png' %}" width="75%" alt="Man cyclist fell 
+            off bicycle at crosswalk unhappy guy sits near his bike traffic 
+            accident">
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <h1>Oops!</h1>
+            <p class="text-center mt-5">Please log in to view this coaching post and its comments.</p>
+            <a class="btn btn-signup" aria-label="Log In" alt="Go to login page" href="{% url 'account_login' %}">Log In</a>
         </div>
     </div>
 </div>
