@@ -273,3 +273,8 @@ body {
 .footer-link-insta {
     margin: 20px 20px 0px;
 }
+
+ul.errorlist li {
+    color: red;
+    font-weight: bold;
+}
