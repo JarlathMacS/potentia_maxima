@@ -26,5 +26,5 @@ urlpatterns = [
     path('', include('home.urls'), name='home_urls'),
 ]
 
-handler404 = 'potentia.views.handler404'
+# handler404 = 'potentia.views.handler404'
 handler500 = 'potentia.views.handler500'

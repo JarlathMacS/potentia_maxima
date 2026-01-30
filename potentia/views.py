@@ -1,5 +1,8 @@
+"""
+Django settings for error handling.
+Views to handle errors.
+"""
 from django.shortcuts import render
-"""Views to handle errors"""
 
 
 def handler404(request, exception=None):

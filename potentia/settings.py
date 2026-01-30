@@ -23,7 +23,18 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = (os.getenv('DEBUG_VALUE') == 'False')
+# DEBUG = (os.getenv('DEBUG_VALUE') == 'False')     evaluates to False
+
+
+# DEBUG = os.environ.get("DEBUG_VALUE") == "True"   # iuliia
+
+# Read DEBUG from common environment variable names, defaulting to False.
+DEBUG = os.environ.get("DEBUG_VALUE", "False") == "True"
+print("DEBUG =", DEBUG)
+
+
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+# # for heroku deployment, ai
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1',]
 
