@@ -4,6 +4,7 @@ certifi==2026.1.4
 cffi==2.0.0
 charset-normalizer==3.4.4
 cloudinary==1.36.0
+coverage==7.13.2
 crispy-bootstrap5==0.7
 cryptography==46.0.3
 defusedxml==0.7.1
