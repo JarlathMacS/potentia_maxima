@@ -13,7 +13,7 @@ class FreeConsultationRequest(models.Model):
     created_on = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        ordering = ["-read", "-created_on"]
+        ordering = ["read", "-created_on"]
 
     def __str__(self):
-        return f"Free consultation request from {self.name}"
+        return f"Free consultation request from {self.name.title()}"

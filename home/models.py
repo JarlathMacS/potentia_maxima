@@ -21,10 +21,10 @@ class CoachingPost(models.Model):
     excerpt = models.TextField(blank=True)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["-updated_on"]
 
     def __str__(self):
-        return f"{self.title} | by Coach {self.author}"
+        return f"{self.title} | by Coach {self.author.title()}"
 
 
 class ProgressComment(models.Model):
@@ -47,10 +47,10 @@ class ProgressComment(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["created_on"]
+        ordering = ["-updated_on"]
 
     def __str__(self):
         return (
-            f"Progress comment by {self.author} | "
+            f"Progress comment by {self.author.title()} | "
             f"on coaching post {self.post.title}"
         )
