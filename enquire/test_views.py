@@ -16,6 +16,6 @@ class TestEnquireView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Free consultation request received! '
-            b'I endeavour to respond within 3 working days.',
+            b'I aim to respond within 3 working days.',
             response.content
         )

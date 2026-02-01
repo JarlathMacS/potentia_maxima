@@ -48,3 +48,5 @@ enquire/fixtures/
 home/fixtures/
 
 db.sqlite3
+
+htmlcov/
