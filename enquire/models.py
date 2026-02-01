@@ -16,4 +16,6 @@ class FreeConsultationRequest(models.Model):
         ordering = ["read", "-created_on"]
 
     def __str__(self):
-        return f"Free consultation request from {self.name.title()}"
+        a = "Free consultation request from "
+        b = f"{self.name}".title()
+        return f"{a}{b}"

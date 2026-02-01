@@ -24,7 +24,9 @@ class CoachingPost(models.Model):
         ordering = ["-updated_on"]
 
     def __str__(self):
-        return f"{self.title} | by Coach {self.author.title()}"
+        a = f"{self.title} | by Coach "
+        b = f"{self.author}".title()
+        return f"{a}{b}"
 
 
 class ProgressComment(models.Model):
@@ -50,7 +52,7 @@ class ProgressComment(models.Model):
         ordering = ["-updated_on"]
 
     def __str__(self):
-        return (
-            f"Progress comment by {self.author.title()} | "
-            f"on coaching post {self.post.title}"
-        )
+        a = "Progress comment by "
+        b = f"{self.author}".title()
+        c = f" | on coaching post {self.post.title}"
+        return f"{a}{b}{c}"
