@@ -49,21 +49,3 @@ class Custom404Tests(TestCase):
             response.content
         )
         self.client.logout()
-
-
-
-    # def test_custom_500_view(self):
-    #     """
-    #     Ensure the custom 500 view is used for a server error.
-    #     """
-    #     response = self.client.get('/url-that-does-not-exist/')
-    #     self.assertEqual(response.status_code, 404)
-    #     self.assertContains(
-    #         response,
-    #         "Something went wrong, as this page is not found!",
-    #         status_code=404,
-    #     )
-        # Note: Testing the 500 error page directly is complex because it
-        # requires simulating a server error. This test checks the 404 page
-        # as a proxy to ensure custom error handling is in place. In a full
-        # application, you would implement a more robust test for the 500 error.

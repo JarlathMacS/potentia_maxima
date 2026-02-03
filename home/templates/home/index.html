@@ -64,18 +64,18 @@
 
         <div class="container mt-5">
     <div class="row">
-        <div class="col-12 col-md-4 text-center">
+        <div class="col-12 col-md-4 mb-3 text-center">
             <img src="{% static 'images/99A7209.webp' %}" width="100%" alt="placeholder image">
             <img src="{% static 'images/99A7280.webp' %}" width="100%" alt="placeholder image">
             <img src="{% static 'images/99A7167.webp' %}" width="100%" alt="placeholder image">
         </div>
-        <div class="col-8 text-center align-self-center">
-            <h4>One-on-One Coaching</h4>
+        <div class="col-md-8 col-md-4 text-center align-self-center">
+            <h4 class="mt-2">One-on-One Coaching</h4>
                         <p>Ready to take the next step in your 
                             health and fitness journey? Begin by clicking below.
                         </p>
                         <p>Already a Client? <a class="link" href="{% url 'account_login' %}">Log In</a></p>
-                        <a class="btn btn-signup right" href="{% url 'account_signup' %}" aria-label="Sign Up"
+                        <a class="btn btn-signup right mb-4" href="{% url 'account_signup' %}" aria-label="Sign Up"
                             alt="Go to signup page">Sign Up</a>
         </div>
     </div>

@@ -37,13 +37,13 @@ body {
 
 .text-blue {
     color: #0e64d1;
-    font-size: 16px;
+    font-size: auto;
     text-decoration: none;
 }
 
 .text-blue-icon {
     color: #0e64d1;
-    font-size: 200%;
+    font-size: auto;
 }
 
 /* .text-blue:hover,
@@ -58,7 +58,7 @@ body {
 
 .text-orange {
     color: #fc5201;
-    font-size: 20px;
+    font-size: auto;
     text-decoration: none;
 }
 
