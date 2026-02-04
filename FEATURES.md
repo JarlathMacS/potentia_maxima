@@ -154,7 +154,7 @@ If the user leaves a field empty, that field will be highlighted:
 
 ![Sign Up Page Empty Field](documentation/features/sign_up_page/signup_page_error_empty_field.png)
 
-The form lists 4 different password instructions:
+The form lists four different password instructions:
 
 ![Sign Up Page Password Instructions](documentation/features/sign_up_page/signup_page_password_instructions.png)
 
@@ -233,6 +233,161 @@ The log out status is shown at the top right of the page, under the brand:
 
 
 ### Client Home Page
+
+This page is accessible only by those authenticated users of the application.
+
+![Client Home Page](documentation/features/client_home_page/client_home_page.png)
+
+The Client Home Page displays multiple cards at a time, with each card 
+containing a different coaching post:
+
+![Client Home Page Card](documentation/features/client_home_page/client_home_page_card.png)
+
+in a grid format on the desktop.  Each card contains an image:
+
+![Client Home Page Card Image](documentation/features/client_home_page/client_home_page_card_image.png)
+
+a title:
+
+![Client Home Page Card Title](documentation/features/client_home_page/client_home_page_card_title.png)
+
+and an excerpt:
+
+![Client Home Page Card Excerpt](documentation/features/client_home_page/client_home_page_card_excerpt.png)
+
+Also shown are the coach's name who authored the coaching post:
+
+![Client Home Page Card Author](documentation/features/client_home_page/client_home_page_card_author.png)
+
+and the date it was created:
+
+![Client Home Page Card Created On](documentation/features/client_home_page/client_home_page_card_created_on.png)
+
+On the desktop there will be six coaching posts to a page, arranged in two rows
+of three posts each.  On the mobile version, the coaching posts are displayed 
+vertically in one row:
+
+![Client Home Page Mobile](documentation/features/client_home_page/client_home_page_mobile.png)
+
+At the bottom of the page are the navigation buttons, either "PREV" or "NEXT" or
+both:
+
+![Client Home Page Button](documentation/features/client_home_page/button_next.png)
+![Client Home Page Button](documentation/features/client_home_page/button_prev.png)
+![Client Home Page Button](documentation/features/client_home_page/button_prev_next.png)
+
+
+### Coaching Post Detail Page
+
+This page is accessible only by those authenticated users of the application.
+
+![Coaching Post Detail Page](documentation/features/coaching_post_detail_page/detail_page_a.png)
+![Coaching Post Detail Page](documentation/features/coaching_post_detail_page/detail_page_b.png)
+
+The Coaching Post Detail Page displays a single coaching post in its entirety.
+It also displays all progress comments made on the coaching post, either by the 
+client users, or by the coach/es.
+
+At the top of the post is a masthead:
+
+![Coaching Post Detail Mast](documentation/features/coaching_post_detail_page/detail_mast.png)
+
+containing the coaching post title:
+
+![Coaching Post Detail Mast Title](documentation/features/coaching_post_detail_page/detail_mast_title.png)
+
+the authorship and creation details:
+
+![Coaching Post Detail Mast Author](documentation/features/coaching_post_detail_page/detail_mast_author.png)
+
+and to the right is the same image as was displayed on the Client Home Page in
+the card:
+
+![Coaching Post Detail Mast Image](documentation/features/coaching_post_detail_page/detail_mast_image.png)
+
+What follows is the text of the coaching post, along with any images, videos,
+links, etc. that the coach wants to use:
+
+![Coaching Post Detail Post](documentation/features/coaching_post_detail_page/detail_post.png)
+
+Next is the progress comments section:
+
+![Coaching Post Detail Comments](documentation/features/coaching_post_detail_page/detail_comments.png)
+
+At the beginning of this section, the number of progress comments currently 
+under this coaching post is displayed:
+
+![Coaching Post Detail Comments Count](documentation/features/coaching_post_detail_page/detail_comments_count.png)
+
+Next is a title of "Progress Comments":
+
+![Coaching Post Detail Comments Title](documentation/features/coaching_post_detail_page/detail_comments_title.png)
+
+Then each comment is displayed, starting with the oldest one at the top, and the
+most recent one at the bottom:
+
+![Coaching Post Detail Comments](documentation/features/coaching_post_detail_page/detail_comments_a.png)
+
+At the top of each comment is listed the author's username, and the date and 
+time it was created:
+
+![Coaching Post Detail Comments Header](documentation/features/coaching_post_detail_page/detail_comments_a_header.png)
+
+If the user that is logged in is the author of any comments, these will display
+with two buttons beneath the comment, "Delete" and "Edit":
+
+![Coaching Post Detail Comments Crud](documentation/features/coaching_post_detail_page/detail_comments_crud.png)
+
+When the blue "Edit" button:
+
+![Coaching Post Detail Comment](documentation/features/coaching_post_detail_page/detail_comment.png)
+
+is clicked, the focus is shifted to the form entitled "Leave a progress 
+comment" and the body of this form is populated with the content of the user's
+existing comment:
+
+![Coaching Post Detail Comments Update](documentation/features/coaching_post_detail_page/detail_comments_update.png)
+
+When the user has made changes and clicks the "Update" button, if there are no
+errors, the user is displayed a green confirmation message at the top of the 
+page:
+
+![Coaching Post Detail Comments Update Message](documentation/features/coaching_post_detail_page/detail_comments_update_message.png)
+
+When the red "Delete" button is clicked, a modal dialog box appears:
+
+![Coaching Post Detail Comments Delete Modal](documentation/features/coaching_post_detail_page/detail_comments_delete_modal.png)
+
+asking for confirmation of the user's desire to delete the progress comment:
+
+![Coaching Post Detail Comments Delete](documentation/features/coaching_post_detail_page/detail_comments_delete.png)
+
+When the user confirms and clicks the "Delete" button, if there are no
+errors, the user is displayed a green confirmation message at the top of the 
+page:
+
+![Coaching Post Detail Comments Delete Message](documentation/features/coaching_post_detail_page/detail_comments_delete_message.png)
+
+The user can also create a new progress comment using the form entitled "Leave
+a progress comment":
+
+![Coaching Post Detail Comments Create](documentation/features/coaching_post_detail_page/detail_comments_create_form.png)
+
+When the user has written their progress comment and clicks the "Submit" button, if there are no
+errors, the user is displayed a green confirmation message at the top of the 
+page:
+
+![Coaching Post Detail Comments Create Messages](documentation/features/coaching_post_detail_page/detail_comments_create_message.png)
+
+On mobile screens, the masthead image is not displayed:
+
+![Coaching Post Detail Mobile Mast](documentation/features/coaching_post_detail_page/detail_mobile_a.png)
+
+and the progress comment form is displayed at the bottom of the page instead of
+on the right hand side:
+
+![Coaching Post Detail Mobile Form](documentation/features/coaching_post_detail_page/detail_mobile_b.png)
+
 
 [Back to top](#potentia--maxima)
 

@@ -51,7 +51,7 @@
     <!-- Displaying Comments -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+            <h3>Progress Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
@@ -84,15 +84,15 @@
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username | capfirst }}</p>
+                <h3>Leave a progress comment:</h3>
+                <p>Commenting as: {{ user.username | capfirst }}</p>
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                <p>Log in to leave a progress comment</p>
                 {% endif %}
             </div>
         </div>
@@ -128,7 +128,7 @@
         </div>
         <div class="col-12 col-md-4 text-center">
             <h1>Oops!</h1>
-            <p class="text-center mt-5">Please log in to view this coaching post and its comments.</p>
+            <p class="text-center mt-5">Please log in to view this coaching post and its progress comments.</p>
             <a class="btn btn-signup" aria-label="Log In" alt="Go to login page" href="{% url 'account_login' %}">Log In</a>
         </div>
     </div>
