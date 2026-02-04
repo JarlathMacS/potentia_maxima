@@ -100,6 +100,8 @@ The footer has the following sections:
 
 ### Landing Home Page
 
+This page is accessible by all visitors to the site.
+
 ![Landing Home Page](documentation/features/landing_home_page/landing_home_page.png)
 
 On the left of the desktop page is a collage of inspiring hero images of the
@@ -121,6 +123,8 @@ which will take them to the Sign Up page, where they can sign up to become a
 client.
 
 ### Sign Up Page
+
+This page is accessible by all visitors to the site.
 
 ![Sign Up Page](documentation/features/sign_up_page/sign_up.png)
 
@@ -172,6 +176,8 @@ If the user inputs a duplicate username, the username field will be highlighted:
 
 ### Log In Page
 
+This page is accessible by all visitors to the site.
+
 ![Log In Page](documentation/features/log_in_page/login_page.png)
 
 This page has a log in form, which has a title and input fields for the user 
@@ -213,6 +219,8 @@ The log in status is shown at the top right of the page, under the brand:
 
 
 ### Log Out Page
+
+This page is accessible only by those authenticated users of the application.
 
 ![Log Out Page](documentation/features/log_out_page/logout_page.png)
 
@@ -388,6 +396,78 @@ on the right hand side:
 
 ![Coaching Post Detail Mobile Form](documentation/features/coaching_post_detail_page/detail_mobile_b.png)
 
+### About Page
+
+This page is accessible by all visitors to the site.
+
+![About Page](documentation/features/about_page/about_page.png)
+
+There is a hero image on the left on desktop screens, of the coach:
+
+![About Page Image](documentation/features/about_page/about_page_image.png)
+
+To the right of the image on desktop screens, is the body of the coach's 'about
+me' story:
+
+![About Page Body](documentation/features/about_page/about_page_body.png)
+
+which has a title:
+
+![About Page Title](documentation/features/about_page/about_page_title.png)
+
+and the date and time it was last updated:
+
+![About Page Updated](documentation/features/about_page/about_page_updated.png)
+
+### Free Consultation Request Page
+
+This page is accessible by all visitors to the site.
+
+![Enquire Page](documentation/features/enquire_page/enquire_page.png)
+
+This page contains a form for the visitor to fill out:
+
+![Enquire Page Form](documentation/features/enquire_page/enquire_page_form.png)
+
+It is below a body of text explaining the purpose of filling out the form, and 
+what visitors can expect from the coach:
+
+![Enquire Page Body](documentation/features/enquire_page/enquire_page_body.png)
+
+If the visitor inputs an invalid email address format, an error message in red
+appears at the top of the page: 
+
+![Enquire Page Error](documentation/features/enquire_page/enquire_page_error_2.png)
+
+If the visitor leaves a field empty, that field will be highlighted:
+
+![Enquire Page Error](documentation/features/enquire_page/enquire_page_error.png)
+
+When the visitor has completed the form and clicks the "Submit" button, if there are no
+errors, the visitor is displayed a green confirmation message at the top of the 
+page:
+
+![Enquire Page Message](documentation/features/enquire_page/enquire_page_message.png)
+
+### 404 Error Page
+
+![404 Error Page](documentation/features/404_error_page/404_error_page.png)
+
+If there is an error finding a particular page, a 404 error is raised and the
+above page is displayed.
+
+If an attempt is made to go to the url of a detailed post, for example, without 
+being logged in, then the following page is displayed, prompting the user to 
+log in:
+
+![Error Page - Log In](documentation/features/404_error_page/detail_error_login.png)
+
+### 500 Error Page
+
+![500 Error Page](documentation/features/500_error_page/500_error_page.png)
+
+If there is an error when writing to the database, for example, the above page 
+is displayed.
 
 [Back to top](#potentia--maxima)
 
