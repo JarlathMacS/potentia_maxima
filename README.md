@@ -204,8 +204,8 @@ Please refer to the [DEPLOYMENT.md](DEPLOYMENT.md) file for all deployment-relat
 ## Acknowledgments
 
 
-- [Iuliia Konovalova](https://github.com/IuliiaKonovalova), my mentor
-- [Fiachra Mac Suibhne](https://www.instagram.com/actacoaching), my nephew whose endeavors inspired this project
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova), my mentor, for her knowledge, advice, and wisdom
+- [Fiachra Mac Suibhne](https://www.instagram.com/actacoaching), my nephew, whose endeavors inspired this project
 
 ---
 ---
