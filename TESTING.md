@@ -2,6 +2,7 @@
 
 ## Testing
 
+---
 ### Manual Testing
 
 Testing was done during development, for each feature, before it was 
@@ -62,7 +63,7 @@ acceptance testing.
 | 500 Error Page    |                        |                  |      |             |
 | 1          | Click on home button | Navigate to client home page | Y | access only by logged in client users         |
 
- 
+---
 ### Testing User Story
 
 | Site Visitor Goals | Requirement met |
@@ -106,6 +107,7 @@ acceptance testing.
 | As a Site Owner, I want to be able to mark requests for free consultation as "read" so that I can see how many I still need to action | Given one or more requests for free consultation, the Site Owner can mark them as "read" |
 | As a Site Owner, I want to be able to delete requests for free consultation in the database so that I can manage them | Given one or more requests for free consultation, the Site Owner can delete them |
 
+---
 ### Bugs
 
 When testing responsiveness, I received a 403 forbidden error when updating a progress comment:
@@ -114,6 +116,7 @@ When testing responsiveness, I received a 403 forbidden error when updating a pr
 
 I realised that the reason was that I was testing responsiveness simultaneously on multiple screens/devices using the [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) Chrome extension.  This was causing the CSRF token to be reused multiple times, which of course it can not.  I solved this issue by only testing on a single screen at a time.
 
+---
 ### Validation
 
 #### HTML Validation:
@@ -128,7 +131,7 @@ I realised that the reason was that I was testing responsiveness simultaneously 
 - No errors or warnings were found when passing through the official [W3C](https://validator.w3.org) validator. 
 This checking was done manually by copying the page source code and pasting it into the validator.
 
-### CSS Validation:
+#### CSS Validation:
 
 - [CSS Validation Report](documentation/validation/css/css.pdf)
 
@@ -136,17 +139,109 @@ This checking was done manually by copying the page source code and pasting it i
 Two warnings about the use of vendor extensions were returned.
 
 
-### JS Validation:
+#### JS Validation:
 
 - [JS Validation Report](documentation/validation/js/js.pdf)
 
 - No errors or warning messages were found when passing through the [JSHint](https://www.jshint.com) validator.
 
-### Python Validation:
+#### Python Validation:
 
-- [Python Validation Report](documentation/validation/python/python.pdf)
+- [Potentia Python Validation Report](documentation/validation/python/potentia/potentia.pdf)
+- [About Python Validation Report](documentation/validation/python/about/about.pdf)
+- [Enquire Python Validation Report](documentation/validation/python/enquire/enquire.pdf)
+- [Home Python Validation Report](documentation/validation/python/home/home.pdf)
 
-- No errors were found when the code was passed through Valentin Bryukhanov's [online validation tool](http://pep8online.com/). According to the reports, the code is [Pep 8-compliant](https://legacy.python.org/dev/peps/pep-0008/). This checking was done manually by copying python code and pasting it into the validator.
+
+- No errors were found when the code was passed through Code Institute's [python linter](https://pep8ci.herokuapp.com).
+
+
+---
+### Lighthouse Reports
+---
+#### Landing Home Page
+
+![Lighthouse Report - Landing Home Page](documentation/lighthouse/landing_home_page.png)
+
+#### Sign Up Page
+
+![Lighthouse Report - Sign Up Page](documentation/lighthouse/sign_up.png)
+
+#### Log In Page
+
+![Lighthouse Report - Log In Page](documentation/lighthouse/log_in.png)
+
+#### Log Out Page
+
+![Lighthouse Report - Log Out Page](documentation/lighthouse/log_out.png)
+
+#### Client Home Page - 1
+
+![Lighthouse Report - Client Home Page - 1](documentation/lighthouse/client_home_page_1.png)
+
+#### Client Home Page - 2
+
+![Lighthouse Report - Client Home Page - 2](documentation/lighthouse/client_home_page_2.png)
+
+#### Client Home Page - 3
+
+![Lighthouse Report - Client Home Page - 3](documentation/lighthouse/client_home_page_3.png)
+
+#### Detail Page - 1
+
+![Lighthouse Report - Detail Page - 1](documentation/lighthouse/detail_1.png)
+
+#### Detail Page - 2
+
+![Lighthouse Report - Detail Page - 2](documentation/lighthouse/detail_2.png)
+
+#### Detail Page - 3
+
+![Lighthouse Report - Detail Page - 3](documentation/lighthouse/detail_3.png)
+
+#### About Page
+
+![Lighthouse Report - About Page](documentation/lighthouse/about.png)
+
+#### Enquire Page
+
+![Lighthouse Report - Enquire Page](documentation/lighthouse/enquire.png)
+
+#### 404 Page
+
+![Lighthouse Report - 404 Page](documentation/lighthouse/404.png)
+
+#### Error-Log In Page
+
+![Lighthouse Report - Error-Log In Page](documentation/lighthouse/error_login.png)
+
+---
+
+### Compatibility
+
+Testing was conducted on the following browsers:
+
+- Safari
+- Chrome
+
+![Compatibility Chrome](documentation/compatibility/chrome.png)
+
+![Compatibility Safari](documentation/compatibility/safari.png)
+
+
+---
+
+### Responsiveness
+
+The responsiveness was checked manually by using devtools (Chrome) throughout the development. 
+It was also checked with [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) Chrome extension.
+
+[Responsiveness Report](documentation/responsive/responsive.pdf)
+
+
+
+---
+
 
 
 [Back to top](#potentia--maxima)

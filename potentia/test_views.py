@@ -1,5 +1,5 @@
 """
-Django settings for error handling
+Django testing for error handling
 """
 from django.urls import reverse
 from django.test import TestCase

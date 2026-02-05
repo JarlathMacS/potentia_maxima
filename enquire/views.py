@@ -2,10 +2,6 @@ from django.contrib import messages
 from django.shortcuts import render
 from .forms import FreeConsultationForm
 
-# Create your views here.
-# def index(request):
-#     return HttpResponse("Hello, World!")
-
 
 def enquire_view(request):
     """Renders the enquire page with a free consultation form.
@@ -35,16 +31,7 @@ def enquire_view(request):
                 "Please check the form and try again.")
 
     free_consultation_form = FreeConsultationForm()
-    # about_content = About.objects.all().order_by('-updated_on').first()
-    # In case there's multiple About instances, get the latest one
-    # context = {
-    #     'about': about_content,
-    # }
-    # return render(
-    #     request,
-    #     'about/about.html',
-    #     context
-    #     )
+
     return render(
         request,
         "enquire/enquire.html",

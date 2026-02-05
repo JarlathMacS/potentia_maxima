@@ -16,7 +16,6 @@ class CoachingPostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
 
-# Register your models here.
 @admin.register(ProgressComment)
 class ProgressCommentAdmin(admin.ModelAdmin):
     """
@@ -24,5 +23,5 @@ class ProgressCommentAdmin(admin.ModelAdmin):
     and field filters.
     """
     list_display = ('body', 'post', 'author', 'created_on', 'updated_on',)
-    search_fields = ['body',]
+    search_fields = ['body', ]
     list_filter = ('post', 'author', 'created_on', 'updated_on',)

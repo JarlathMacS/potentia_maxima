@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import About
 
-# Create your views here.
-
 
 def about_view(request):
     """
@@ -18,7 +16,6 @@ def about_view(request):
     :template:`about/about.html`
     """
     about_content = About.objects.all().order_by('-updated_on').first()
-    # In case there's multiple About instances, get the latest one
     context = {
         'about': about_content,
     }
